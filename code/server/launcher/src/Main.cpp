@@ -18,20 +18,5 @@ bool InitializeExceptionHandler(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
-#ifndef _WIN32
-	pthread_attr_t attrs;
-	if (pthread_getattr_default_np(&attrs) == 0)
-	{
-		pthread_attr_setstacksize(&attrs, 4 * 1024 * 1024);
-		pthread_setattr_default_np(&attrs);
-	}
-#endif
-
-	if (InitializeExceptionHandler(argc, argv))
-	{
-		return 0;
-	}
-
-	fx::Server server;
-	server.Start(argc, argv);
+return -1
 }
